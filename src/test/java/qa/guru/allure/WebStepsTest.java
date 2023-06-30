@@ -2,7 +2,7 @@ package qa.guru.allure;
 
 import org.junit.jupiter.api.Test;
 
-public class WebSteps extends TestBase {
+public class WebStepsTest extends TestBase {
 
     @Test
     public void webSteps() {
@@ -11,8 +11,8 @@ public class WebSteps extends TestBase {
 
         step.openMainPage();
         step.searchForRepository(repositoryName);
-        step.ClickOnRepositoryName(repositoryName);
-        step.ClickOnIssueTab();
-        step.IssueExist(issue);
+        step.clickOnRepositoryName(repositoryName);
+        step.clickOnIssueTab();
+        step.issueExist(issue);
     }
 }
