@@ -7,8 +7,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static org.openqa.selenium.By.linkText;
 
-public class AnnotationStep extends TestBase {
-
+public class AnnotationStep {
+TestBase testBase = new TestBase();
     @Step("Открыть главную страницу")
     public void openMainPage() {
         open("");
@@ -16,9 +16,9 @@ public class AnnotationStep extends TestBase {
 
     @Step("Перейти по ссылке в репозиторий {repositoryName}")
     public void searchForRepository(String repositoryName) {
-        $(searchField).click();
-        $(searchField).sendKeys(repositoryName);
-        $(searchField).submit();
+        $(testBase.searchField).click();
+        $(testBase.searchField).sendKeys(repositoryName);
+        $(testBase.searchField).submit();
     }
 
     @Step("Нажать на наименование репозитория {repositoryName}")
@@ -28,7 +28,7 @@ public class AnnotationStep extends TestBase {
 
     @Step("Нажать на таб Issues")
     public void clickOnIssueTab() {
-        $(issueTab).click();
+        $(testBase.issueTab).click();
     }
 
     @Step("Issue c номером {issue} существует")
